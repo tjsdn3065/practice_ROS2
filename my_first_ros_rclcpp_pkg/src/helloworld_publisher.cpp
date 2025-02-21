@@ -3,7 +3,7 @@
 #include <chrono>
 #include <functional>
 #include <memory>
-#include <sting>
+#include <string>
 
 // 이어서 rclcpp의 Node 클래스를 사용하기 위한 rclcpp.hpp 헤더 파일과
 // 퍼블리시하는 메시지의 타입인 String 메시지 인터페이스를 사용하기 위해 string.hpp 헤더 파일을 포함시켰다.
@@ -26,10 +26,10 @@ public:
   {
     // 그 다음 퍼블리셔의 QoS 설정을 위하여 rclcpp::Qos(rclcpp::KeepLast(10))과 같이 기본 QoS에서 Keeplast 형태로 depth를 10으로 하자.
     // 이는 통신 상태가 원활하지 못하거나 예기치 못한 상황이 발생할 경우 퍼블리시할 데이터를 버퍼에 10개까지 저장하는 설정이다.
-    auto qos_profile = rclcpp::Qos(rclcpp::KeepLast(10));
+    auto qos_profile = rclcpp::QoS(rclcpp::KeepLast(10));
     // 그 다음으로는 Node 클래스의 create_publisher 함수를 이용하여 퍼블리셔를 설정하고 있다.
     // 매개변수의 토픽 메시지 타입은 String, 토픽 이름은 helloworld, Qos는 qos_profile로 설정했다.
-    helloworld_publisher_ = this->create_publisher<std::msgs::msg::String>(
+    helloworld_publisher_ = this->create_publisher<std_msgs::msg::String>(
       "helloworld", qos_profile);
     // 마지막으로 Node 클래스의 create_wall_timer 함수를 이용해 콜백 함수를 실행시킨다.
     // 첫 번째 매개변수는 주기이며 1s로 설정하면 1초마다 지정한 콜백 함수가 실행된다.
