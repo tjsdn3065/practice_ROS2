@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
 project(my_first_ros_rclcpp_pkg)
 
+if(NOT CMAKE_CXX_STANDARD)
+  set (CMAKE_CXX_STANDARD 14)
+endif()
+
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
@@ -20,7 +24,7 @@ ament_target_dependencies(helloworld_subscriber rclcpp std_msgs)
 # Install
 install(TARGETS
   helloworld_publisher
-  helloworld subscriber
+  helloworld_subscriber
   DESTINATION lib/${PROJECT_NAME})
 
 # Test
