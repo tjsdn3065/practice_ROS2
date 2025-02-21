@@ -10,9 +10,9 @@ from std_msgs.msg import String
 class HelloworldPublisher(Node):
 
     def __init__(self):
-        # 다음은 클래스 생성자 정의로 super()._init__(helloworld_publisher)를 이용해 부모 클래스 (Node)의 생성자를 호출하고
+        # 다음은 클래스 생성자 정의로 super()._init__(Helloworld_publisher)를 이용해 부모 클래스 (Node)의 생성자를 호출하고
         # 노드 이름을 helloworld_publisher로 지정하였다.
-        super().__init__('helloworld_publisher')
+        super().__init__('Helloworld_publisher')
         # 그 다음 퍼블리셔의 QoS 설정을 위하여 QoSProfile을 호출하고 기본 depth를 10으로 설정하였다.
         # 이는 통신 상태가 원활하지 못하거나 예기치 못한 문제가 발생할 경우를 대비해
         # 퍼블리시할 데이터를 버퍼에 10개까지 저장하는 설정이다.

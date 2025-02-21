@@ -21,7 +21,7 @@ setup(
     entry_points={    # 해당 설정을 통해 ros2 run 또는 ros2 launch 명령어로 해당 스크립트를 실행시킬 수 있다.
         'console_scripts': [
           'helloworld_publisher = my_first_ros_rclpy_pkg.helloworld_publisher:main',
-          'helloworld_publisher = my_first_ros_rclpy_pkg.helloworld_subscriber:main'
+          'helloworld_subscriber = my_first_ros_rclpy_pkg.helloworld_subscriber:main'
         ],
     },
 )
